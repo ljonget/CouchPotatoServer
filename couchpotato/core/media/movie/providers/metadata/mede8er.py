@@ -120,7 +120,6 @@ class Mede8er(MovieMetaData):
         if data['meta_data'].get('video'):
             vcodec = SubElement(movie_root, 'videoCodec')
             vcodec.text = toUnicode(data['meta_data']['video'])
-            aspect.text = str(data['meta_data']['aspect'])
             resolution = SubElement(movie_root, 'resolution')
             resolution.text = str(data['meta_data']['resolution_width']) + "x" + str(data['meta_data']['resolution_height'])
 
