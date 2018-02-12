@@ -32,8 +32,8 @@ class Mede8er(MovieMetaData):
         if not data: data = {}
         if not movie_info: movie_info = {}
 
-        xml = Element('details')
-        movie_root = SubElement(xml, 'movie')
+        nfoxml = Element('details')
+        movie_root = SubElement(nfoxml, 'movie')
         movie_root.attrib["isExtra"] = "false"
         movie_root.attrib["isSet"] = "false"
         movie_root.attrib["isTV"] = "false"
@@ -131,8 +131,8 @@ class Mede8er(MovieMetaData):
             channels.text = toUnicode(data['meta_data'].get('audio_channels'))
 
         # Clean up the xml and return it
-        xml = xml.dom.minidom.parseString(tostring(xml))
-        xml_string = xml.toprettyxml(indent = '  ')
+        nfoxml = xml.dom.minidom.parseString(tostring(nfoxml))
+        xml_string = nfoxml.toprettyxml(indent = '  ')
         text_re = re.compile('>\n\s+([^<>\s].*?)\n\s+</', re.DOTALL)
         xml_string = text_re.sub('>\g<1></', xml_string)
 
