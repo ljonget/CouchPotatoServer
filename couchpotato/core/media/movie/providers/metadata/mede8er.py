@@ -17,7 +17,7 @@ log = CPLog(__name__)
 class Mede8er(MovieMetaData):
 
     def getFanartName(self, name, root, i):
-        return self.createMetaName('%s-fanart.jpg', name, root)
+        return self.createMetaName('fanart.jpg', name, root)
     
     def getThumbnailName(self, name, root, i):
         return self.createMetaName('%s.jpg', name, root)
